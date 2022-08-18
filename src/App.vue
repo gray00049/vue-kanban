@@ -1,26 +1,40 @@
 <template>
-  <img alt="Vue logo" src="./assets/logo.png">
-  <HelloWorld msg="Welcome to Your Vue.js App"/>
+  <div class="kanban-wrapper">
+
+    <div class="kanban-board">
+      <p class="kanban-board__title">Board 1</p>
+      <div class="kanban-board__inner">
+        <div class="kanban-board__task">
+          Create kanban-board
+        </div>
+        <button class="kanban-board__add-new-task">+</button>
+      </div>
+    </div>
+
+    <div class="kanban-board">
+      <p class="kanban-board__title">Board 2</p>
+      <div class="kanban-board__inner">
+        <div class="kanban-board__task kanban-board__task--warning">
+          Create kanban-board
+        </div>
+        <button class="kanban-board__add-new-task">+</button>
+      </div>
+    </div>
+
+    <div class="kanban-board">
+      <p class="kanban-board__title">Board 3</p>
+      <div class="kanban-board__inner">
+        <button class="kanban-board__add-new-task">+</button>
+      </div>
+    </div>
+
+    <button class="kanban-board__add-new">+</button>
+
+  </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
-
 export default {
   name: 'App',
-  components: {
-    HelloWorld
-  }
 }
 </script>
-
-<style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
-</style>
