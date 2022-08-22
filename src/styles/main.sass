@@ -39,6 +39,7 @@ body
   display: flex
   justify-content: center
 
+
 .kanban-board
   width: 250px
   margin-right: 30px
@@ -81,6 +82,8 @@ body
     background: transparentize($white, 0.7)
     &--warning
       background: transparentize($red, 0.7)
+    &--done
+      text-decoration: line-through
   &__add-new
     width: 250px
     color: lighten($text-color, 20%)

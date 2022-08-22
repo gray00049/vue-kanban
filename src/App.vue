@@ -1,32 +1,7 @@
 <template>
   <div class="kanban-wrapper">
-
-    <div class="kanban-board">
-      <p class="kanban-board__title">Board 1</p>
-      <div class="kanban-board__inner">
-        <div class="kanban-board__task">
-          Create kanban-board
-        </div>
-        <button class="kanban-board__add-new-task">+</button>
-      </div>
-    </div>
-
-    <div class="kanban-board">
-      <p class="kanban-board__title">Board 2</p>
-      <div class="kanban-board__inner">
-        <div class="kanban-board__task kanban-board__task--warning">
-          Create kanban-board
-        </div>
-        <button class="kanban-board__add-new-task">+</button>
-      </div>
-    </div>
-
-    <div class="kanban-board">
-      <p class="kanban-board__title">Board 3</p>
-      <div class="kanban-board__inner">
-        <button class="kanban-board__add-new-task">+</button>
-      </div>
-    </div>
+    
+    <KanbanBoard v-for="(board, id) in boards" :key="id" :board="board" />
 
     <button class="kanban-board__add-new">+</button>
 
@@ -34,7 +9,45 @@
 </template>
 
 <script>
+import KanbanBoard from "@/components/KanbanBoard.vue";
 export default {
-  name: 'App',
+  name: "App",
+  data() {
+    return {
+      boards: [
+        {
+          title: "My task",
+          tasks: [
+            {
+              status: "inwork",
+              importance: "ordinary",
+              text: "Create kanban board"
+            },
+            {
+              status: "done",
+              importance: "ordinary",
+              text: "Create start template"
+            },
+          ]
+        },
+        {
+          title: "Other task",
+          tasks: [
+            {
+              status: "inwork",
+              importance: "high",
+              text: "Learn vue.js"
+            },
+            {
+              status: "done",
+              importance: "ordinary",
+              text: "Create some projects"
+            },
+          ]
+        },
+      ],
+    };
+  },
+  components: { KanbanBoard }
 }
 </script>
